@@ -19,7 +19,7 @@ export const Movie = ({ movie, onDelete, onLike, liked }) => {
         <span>{movie.category}</span>
 
         <BlockGroup layout='vertical'>
-          <Block layout='horizontal' justify='space-between'>
+          <Block layout='horizontal' justify='space-between' gap={30}>
             <LikesRatioContaienr layout='horizontal' align='center' gap={5}>
               <ThumbUpAlt />
               <span>{movie.likes}</span>
