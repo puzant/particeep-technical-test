@@ -93,7 +93,7 @@ export const Movies = () => {
 
         <Block layout='horizontal' align='center' gap={5}>
           <SelectorTitle>Movies per page</SelectorTitle>
-          <CustomSelect onChange={handleSettingItemspersPgae} name="movies per page">
+          <CustomSelect onChange={handleSettingItemspersPgae}>
             <option value="2">2</option>
             <option value="4">4</option>
             <option value="8">8</option>
@@ -103,26 +103,30 @@ export const Movies = () => {
 
       </BlockGroup>
         
-      <Block layout='horizontal' justify='center' wrap>
-        {currentMovies?.map((movie) => (
-          <Movie
-            liked={likes.includes(movie.id)}
-            key={movie.id}
-            movie={movie}
-            onDelete={handleDelete}
-            onLike={handleLike}
-          />
-        ))}
-      </Block>
-      <ToastContainer />
+      <BlockGroup layout='vertical' align='center'>
+        <Block layout='horizontal' justify='center' wrap>
+          {currentMovies?.map((movie) => (
+            <Movie
+              liked={likes.includes(movie.id)}
+              key={movie.id}
+              movie={movie}
+              onDelete={handleDelete}
+              onLike={handleLike}
+            />
+          ))}
+        </Block>
+      
+        <ToastContainer />
         
-      <Pagination
-        onNextClick={handleOnNextClick}
-        onPreviousClick={handleOnPreviousClick}
-        moviesPerPage={moviesPerPage}
-        totalMovies={movies.length}
-        onPaginate={handlePagination}
-      />
+        <Pagination
+          onNextClick={handleOnNextClick}
+          onPreviousClick={handleOnPreviousClick}
+          moviesPerPage={moviesPerPage}
+          totalMovies={movies.length}
+          onPaginate={handlePagination}
+        />
+      </BlockGroup>
+
     </Root>
   )
 
