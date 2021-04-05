@@ -36,13 +36,13 @@ export const Movie = ({ movie, onDelete, onLike, liked }) => {
 
         <Block layout='horizontal' justify='space-between'>
           
-          <LikeButtonContainer onClick={() => onLike(movie.id)}>
+          <PrevNextButtonContainer onClick={() => onLike(movie.id)}>
             {liked ? <ThumbDown color='secondary' /> : <ThumbUpAlt color='primary' />}
-          </LikeButtonContainer>
+          </PrevNextButtonContainer>
 
-          <DeleteButtonContainer onClick={() => onDelete(movie.id)}>
+          <PrevNextButtonContainer onClick={() => onDelete(movie.id)}>
             <Delete color='secondary' />
-          </DeleteButtonContainer>
+          </PrevNextButtonContainer>
         </Block>
         
       </Block>
@@ -69,13 +69,7 @@ const MovieTitle = styled.div`
   font-size: 16px;
 `
 
-const DeleteButtonContainer = styled.div`
-  &:hover {
-    cursor: pointer;
-  }
-`
-
-const LikeButtonContainer = styled.div`
+const PrevNextButtonContainer = styled.div`
   &:hover {
     cursor: pointer;
   }
