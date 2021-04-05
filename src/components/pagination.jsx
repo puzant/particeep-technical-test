@@ -6,7 +6,6 @@ import ChevronLeft from '@material-ui/icons/ChevronLeft'
 export const Pagination = ({moviesPerPage, totalMovies, onPaginate, onNextClick, onPreviousClick}) => {
   
   const pageNumbers = []
-  const [currentPageNumner, setCurrentPageNumber] = React.useState()
   
   for (let i=1; i<=Math.ceil(totalMovies / moviesPerPage); i++) {
     pageNumbers.push(i)
@@ -28,13 +27,10 @@ export const Pagination = ({moviesPerPage, totalMovies, onPaginate, onNextClick,
 
 }
 
-const Root = styled.div`
-  margin: auto;
-  display: flex;
-  justify-content: center;
-`
+const Root = styled.div``
 
-const PagniatiedList = styled.ul`
+const PagniatiedList = styled.div`
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   list-style-type: none;
